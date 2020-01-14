@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/3DMapGenerator.gd" type="Script" id=1]
+[ext_resource path="res://scripts/3DMapDebug.gd" type="Script" id=2]
+[ext_resource path="res://scripts/TestCamera.gd" type="Script" id=3]
+
+[node name="SpatialScene" type="Spatial"]
+
+[node name="3DMapGenerator" type="Node" parent="."]
+script = ExtResource( 1 )
+size = 70
+densityThreshold = 0.5
+rngSeed = 56123
+noiseFreq0 = 1.1
+noiseFreq1 = 2.0
+noiseFreq2 = 4.0
+noiseAmp0 = 0.4
+noiseAmp1 = 1.1
+warpFactor = 0.04
+makeFloor = true
+terraceLevel = 13.23
+
+[node name="3DMapDebug" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+fov = 90.0
+script = ExtResource( 3 )
+turnSpeed = 0.3
+goSpeed = 5
+
